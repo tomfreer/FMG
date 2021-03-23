@@ -1,3 +1,4 @@
 ---
 collections:
-- fortinet.fortimanager
+# With the collection name, version, and source options
+- name: fortinet.fortimanager
