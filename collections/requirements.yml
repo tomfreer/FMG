@@ -1,3 +1,3 @@
 ---
 collections:
-  - fortinet.fortimanager
+  -name: fortinet.fortimanager
