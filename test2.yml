@@ -1,5 +1,5 @@
 ---
-- hosts: fortimanagers
+- hosts: FMG
   connection: httpapi
   collections:
     - fortinet.fortimanager
