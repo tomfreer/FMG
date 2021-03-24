@@ -37,3 +37,6 @@
            vpn-interface-priority: '0'
            vpntable: OL_WAN1
            xauthtype: client
+           scope member:
+             -
+                 name: fgt-warehouse-ansible
