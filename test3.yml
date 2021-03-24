@@ -25,5 +25,5 @@
               sn: FG81EPTK19002078
               #version: '600'
            flags:
-             - creat_task
+             - create_task
              - nonblocking
