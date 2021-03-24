@@ -9,7 +9,6 @@
   tasks:
    - name: Add a device to the Device Manager database.
      fmgr_dvm_cmd_add_device:
-        bypass_validation: False
         dvm_cmd_add_device:
            adom: SD-WAN-Lab
            device:
