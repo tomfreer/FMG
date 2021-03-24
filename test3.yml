@@ -1,12 +1,12 @@
 ---
-- name: Add device fgt-warehouse
-  fmgr_dvm_cmd_add_device:
-    dvm_cmd_add_device:
-      adom: 'SD-WAN-Lab'
-      device:
-        name: 'fgt-warehouse'
-        adm_usr: 'fgtadmin'
-        mgmt_mode: fmgfaz
-        desc: 'added by ansible'
-      flags:
-        - none
+ - name: Add device fgt-warehouse
+   fmgr_dvm_cmd_add_device:
+     dvm_cmd_add_device:
+       adom: 'SD-WAN-Lab'
+       device:
+         name: 'fgt-warehouse'
+         adm_usr: 'fgtadmin'
+         mgmt_mode: fmgfaz
+         desc: 'added by ansible'
+       flags:
+         - none
