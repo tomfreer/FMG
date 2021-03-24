@@ -35,7 +35,7 @@
            tunnel-search: selectors
            unity-support: enable
            vpn-interface-priority: '0'
-           vpntable: OL_WAN2
+           vpntable: OL_WAN1
            xauthtype: client
            scope member:
              -
