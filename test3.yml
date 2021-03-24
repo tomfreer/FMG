@@ -14,7 +14,7 @@
            adom: SD-WAN-Lab
            device:
               adm_pass: fgtadmin
-              mgmt_mode: fgmfaz
+              mgmt_mode: fmgfaz
               name: fgt-warehouse-ansible
               os_type: fos
               os_ver: '6.4'
