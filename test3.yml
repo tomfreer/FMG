@@ -1,28 +1,12 @@
 ---
-- hosts: 192.168.0.104
-  collections:
-    - fortinet.fortimanager
-  connection: httpapi
-  vars:
-     ansible_httpapi_use_ssl: True
-     ansible_httpapi_validate_certs: False
-     ansible_httpapi_port: 443
-  tasks:
-   - name: Add a device to the Device Manager database.
-     fmgr_dvm_cmd_add_device:
-        bypass_validation: False
-        dvm_cmd_add_device:
-           adom: SD-WAN-Lab
-           device:
-              adm_usr: fgtadmin
-              desc: FGT added by Ansible
-              mgmt_mode: fmgfaz
-              name: FGT-Ansible-test
-              os_type: 'fos'
-              os_ver: '6.0'
-              platform_str: FortiGate-81E-POE
-              sn: FG81EPTK19002081
-           groups:
-              -
-                 name: warehouse
-                 vdom: SD-WAN-Lab
+- name: Add device fgt-warehouse
+  fmgr_dvm_cmd_add_device:
+    dvm_cmd_add_device:
+      adom: 'SD-WAN-Lab'
+      device:
+        name: 'fgt-warehouse'
+        adm_usr: 'fgtadmin'
+        mgmt_mode: fmgfaz
+        desc: 'added by ansible'
+      flags:
+        - none
