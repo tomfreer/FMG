@@ -18,7 +18,7 @@
               desc: FGT added by Ansible
               mgmt_mode: fmgfaz
               name: FGT-Ansible-test
-              os_type: '0'
+              os_type: 'fos'
               os_ver: '6'
               platform_str: FortiGate-81E-POE
               sn: FG81EPTK19002081
