@@ -16,7 +16,7 @@
            device:
               adm_usr: fgtadmin
               desc: FGT added by Ansible
-              mgmt_mode: fmg, faz
+              mgmt_mode: fmgfaz
               name: FGT-Ansible-test
               os_type: '0'
               os_ver: '6'
