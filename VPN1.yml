@@ -19,12 +19,13 @@
            auto-configuration: enable
            automatic_routing: disable
            extgw_p2_per_net: disable
-           id: '10'
+           id: 9
            iface: WAN1-ISP
            ipsec-lease-hold: '60'
            mode-cfg: enable
            mode-cfg-ip-version: '4'
            net-device: disable
+           peer: <value of string>
            peertype: any
            protected_subnet:
              -
@@ -37,3 +38,7 @@
            vpn-interface-priority: '0'
            vpntable: OL_WAN1
            xauthtype: client
+           scope member:
+            -
+                name: fgt-warehouse-ansible
+                vdom: SD-WAn-Lab                
