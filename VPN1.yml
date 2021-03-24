@@ -11,7 +11,7 @@
    - name: VPN node for VPN Manager. Must specify vpntable and scope member.
      fmgr_vpnmgr_node:
         adom: SD-WAN-Lab
-        state: absent
+        state: present
         vpnmgr_node:
            add-route: disable
            assign-ip: enable
