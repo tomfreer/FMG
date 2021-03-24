@@ -1,4 +1,5 @@
-    - name: Get the fortimanager's ADOMs
+---
+- name: Get the fortimanager's ADOMs
       fmgr_fact:
         facts:
           selector: dvmdb_adom
