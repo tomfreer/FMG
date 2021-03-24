@@ -20,9 +20,8 @@
               name: FGT-Ansible-test
               os_type: 0
               os_ver: 6
-              patch: <value of integer>
-              platform_str: FortiGate-60E
-              sn: <value of string>
+              platform_str: FortiGate-81E-POE
+              sn: FG81EPTK19002081
            groups:
               -
                  name: warehouse
