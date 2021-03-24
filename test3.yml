@@ -24,6 +24,4 @@
               platform_str: FortiGate-81E-POE
               sn: FG81EPTK19002078
               #version: '600'
-           flags:
-             - create_task
-             - nonblocking
+
