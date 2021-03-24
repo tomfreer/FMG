@@ -12,7 +12,7 @@
         dvm_cmd_add_device:
            adom: SD-WAN-Lab
            device:
-              adm_pass: fgtadmin
+              adm_user: fgtadmin
               mgmt_mode: fmgfaz
               name: fgt-warehouse-ansible
               os_type: fos
