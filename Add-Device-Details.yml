@@ -17,5 +17,9 @@
            hostname: fgt-warehouse-ansible
            latitude: '54.5973'
            longitude: '-5.9301'
-           meta fields: 'address': 'Belfast, England', "branch-id": "'4'", "remote-dc-id":"''", "BGP-code": "'19.6.0'"
+           meta fields: 
+              address: Belfast, England
+              branch-id: '4'
+              remote-dc-id:''
+              BGP-code: '19.6.0'
            name: fgt-warehouse-ansible
