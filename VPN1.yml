@@ -19,7 +19,7 @@
            auto-configuration: enable
            automatic_routing: disable
            extgw_p2_per_net: disable
-           id: 9
+           #id: 9
            iface: WAN1-ISP
            ipsec-lease-hold: '60'
            mode-cfg: enable
