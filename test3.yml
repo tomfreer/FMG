@@ -1,3 +1,4 @@
+---
 - hosts: 192.168.0.104
   collections:
     - fortinet.fortimanager
@@ -12,17 +13,8 @@
         dvm_cmd_add_device:
            adom: SD-WAN-Lab
            device:
-              adm_user: fgtadmin
+              adm_usr: fgtadmin
               mgmt_mode: fmgfaz
               name: fgt-warehouse-ansible
-              os_type: fos
-              os_ver: '6.0'
-              platform_str: Fortigate-81-POE
-              sn: FG81EPTK19002078
            flags:
              - none
-           groups:
-             -
-                 name: warehouse
-                 vdom: SD-WAN-Lab
-
