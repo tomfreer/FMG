@@ -40,4 +40,4 @@
            scope member:
              -
                  name: fgt-warehouse-ansible
-                 vdom: SD-WAN-Lab        
+      
