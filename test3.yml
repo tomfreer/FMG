@@ -27,7 +27,7 @@
               patch: <value of integer>
               platform_str: FortiGate-60E
               sn: <value of string>
-     groups:
+           groups:
               -
                  name: warehouse
                  vdom: SD-WAN-Lab
