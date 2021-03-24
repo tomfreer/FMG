@@ -20,6 +20,6 @@
            meta fields: 
               address: Belfast, England
               branch-id: '4'
-              remote-dc-id:''
+              remote-dc-id:
               BGP-code: '19.6.0',
            name: fgt-warehouse-ansible
