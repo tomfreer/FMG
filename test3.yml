@@ -17,7 +17,7 @@
               mgmt_mode: fmgfaz
               name: fgt-warehouse-ansible
               os_type: fos
-              os_ver: '6.4'
+              os_ver: '6.0'
               platform_str: Fortigate-81-POE
               sn: FG81EPTK19002078
            flags:
