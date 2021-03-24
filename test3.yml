@@ -3,7 +3,7 @@
   connection: httpapi
   collections:
     - fortinet.fortimanager
-    adom_name: SD_WAN-Lab
+  adom_name: SD_WAN-Lab
   devices:
     - name: fgt_warehouse1
       ip: 10.10.10.1
