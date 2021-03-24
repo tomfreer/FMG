@@ -20,7 +20,7 @@
               name: fgt-warehouse-ansible
               os_type: fos
               os_ver: '6.0'
-              patch: '4'
+              mr: '4'
               platform_str: FortiGate-81E-POE
               sn: FG81EPTK19002078
               #version: '600'
