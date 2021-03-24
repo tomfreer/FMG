@@ -25,7 +25,6 @@
            mode-cfg: enable
            mode-cfg-ip-version: '4'
            net-device: disable
-           peer: <value of string>
            peertype: any
            protected_subnet:
              -
