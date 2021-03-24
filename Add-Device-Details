@@ -1,0 +1,26 @@
+---
+- hosts: 192.168.0.104
+  collections:
+    - fortinet.fortimanager
+  connection: httpapi
+  vars:
+     ansible_httpapi_use_ssl: True
+     ansible_httpapi_validate_certs: False
+     ansible_httpapi_port: 443
+  tasks:
+   - name: Device table, most attributes are read-only and can only be changed internally. Refer to Device Manager Command module for API to add, d...
+     fmgr_dvmdb_device:
+        bypass_validation: False
+        adom: SD-WAN-Lab
+        device: fgt-warehouse-ansible
+        dvmdb_device:
+           hostname: fgt-warehouse-ansible
+           latitude: '54.5973'
+           longitude: '-5.9301'
+           meta fields: {
+               address: Belfast, England
+               branch-id: '4'
+               remote-dc-id:''
+               BGP-code: '19.6.0
+               }
+           name: fgt-warehouse-ansible
