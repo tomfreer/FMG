@@ -38,4 +38,6 @@
            vpntable: OL_WAN1
            xauthtype: client
            scope member:
-             name: fgt-warehouse-ansible
+             -
+                 name: fgt-warehouse-ansible
+                 vdom: root 
