@@ -1,4 +1,6 @@
 ---
+- hosts: fortimanagers
+  connection: httpapi
   collections:
     - fortinet.fortimanager
   tasks:
