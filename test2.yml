@@ -1,5 +1,5 @@
 ---
-- hosts: FMG
+- hosts: 192.168.0.104
   connection: httpapi
   collections:
     - fortinet.fortimanager
