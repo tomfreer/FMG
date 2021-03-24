@@ -11,10 +11,6 @@
    - name: Add a device to the Device Manager database.
      fmgr_dvm_cmd_add_device:
         bypass_validation: False
-        workspace_locking_adom: <value in [global, custom adom including root]>
-        workspace_locking_timeout: 300
-        rc_succeeded: [0, -2, -3, ...]
-        rc_failed: [-2, -3, ...]
         dvm_cmd_add_device:
            adom: SD-WAN-Lab
            device:
