@@ -1,9 +1,33 @@
 ---
 - hosts: 192.168.0.104
-  connection: httpapi
   collections:
     - fortinet.fortimanager
-- adom_name: SD_WAN-Lab
-- devices:
-    - name: fgt_warehouse1
-      ip: 10.10.10.1
+  connection: httpapi
+  vars:
+     ansible_httpapi_use_ssl: True
+     ansible_httpapi_validate_certs: False
+     ansible_httpapi_port: 443
+  tasks:
+   - name: Add a device to the Device Manager database.
+     fmgr_dvm_cmd_add_device:
+        bypass_validation: False
+        workspace_locking_adom: <value in [global, custom adom including root]>
+        workspace_locking_timeout: 300
+        rc_succeeded: [0, -2, -3, ...]
+        rc_failed: [-2, -3, ...]
+        dvm_cmd_add_device:
+           adom: SD-WAN-Lab
+           device:
+              adm_usr: fgtadmin
+              desc: FGT added by Ansible
+              mgmt_mode: fmgfaz
+              name: FGT-Ansible-test
+              os_type: 0
+              os_ver: 6
+              patch: <value of integer>
+              platform_str: FortiGate-60E
+              sn: <value of string>
+			groups:
+              -
+                 name: warehouse
+                 vdom: SD-WAN-Lab
