@@ -1,0 +1,21 @@
+---
+- hosts: 192.168.0.104
+  collections:
+    - fortinet.fortimanager
+  connection: httpapi
+  vars:
+     ansible_httpapi_use_ssl: True
+     ansible_httpapi_validate_certs: False
+     ansible_httpapi_port: 443
+  tasks:
+   - name: no description
+     fmgr_templategroup:
+        adom: SD-WAN-Lab
+        state: present
+        templategroup:
+           member: Warehouse-New-Overlay, Warehouse-New-BGP
+           name: Warehouse-New
+           scope member:
+             -           
+                 name: fgt-warehouse-ansible
+                 vdom: root 
