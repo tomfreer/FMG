@@ -37,13 +37,13 @@
                        vdom: root
                  local-intf: port3                  
 
-                  _scope:
+                 _scope:
                    -
                        name: AWS-FGT
                        vdom: root
                  local-intf: port2
 
-                  _scope:
+                 _scope:
                    -
                        name: fgt-warehouse-ansible
                        vdom: root
