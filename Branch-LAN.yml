@@ -64,7 +64,6 @@
                                 {
                              "name": "WAN1-ISP",
                              "description": "INET",
-                             "single-intf": 1,
                              "default-mapping": 1,
                              "defmap-intf": "port1",
                              "dynamic_mapping": [
