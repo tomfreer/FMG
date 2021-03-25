@@ -15,7 +15,7 @@
                    "method":"update",
                    "params":[
                     {
-                         "url":"pm/config/adom/SD-WAN-Lab/obj/cli/template-group",
+                         "url":"/pm/config/adom/SD-WAN-Lab/obj/cli/template-group",
                          "data":[
                             {
                                "name":"Warehouse-New",
