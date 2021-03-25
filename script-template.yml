@@ -8,14 +8,24 @@
      ansible_httpapi_validate_certs: False
      ansible_httpapi_port: 443
   tasks:
-   - name: no description
-     fmgr_templategroup:
-        adom: SD-WAN-Lab
-        state: present
-        templategroup:
-           member: Warehouse-New-Overlay, Warehouse-New-BGP
-           name: Warehouse-New
-           scope member:
-             -           
-                 name: fgt-warehouse-ansible
-                 vdom: root 
+    -   name: 'login a user'
+        fmgr_generic:
+             method: 'update'
+             params:
+                - url: '/pm/config/adom/SD-WAN-Lab/obj/cli/template-group'
+                  "data": {
+        "name": "Warehouse-New",
+        "member": [
+          "Warehouse-New-Overlay",
+          "Warehouse-New-BGP"
+          ],
+        "scope member": [
+          {
+            "name": "{{name_fgt_ztp}}",
+            "vdom": "root"
+          },
+        ]
+      }
+    }
+  ]
+}
