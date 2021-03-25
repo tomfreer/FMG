@@ -16,6 +16,6 @@
         dynamic_interface_dynamicmapping:
            _scope:
              -
-                  name: Branch_2
+                  name: AWS-FGT
                   vdom: root
-           local-intf: port3
+           local-intf: port2
