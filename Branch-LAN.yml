@@ -10,7 +10,7 @@
   tasks:
    - name: Branch-LAN
      fmgr_dynamic_interface:
-        adom: SD-WAN-lab
+        adom: SD-WAN-Lab
         state: present
         dynamic_interface:
            color: '11'
