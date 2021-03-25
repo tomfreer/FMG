@@ -1,0 +1,42 @@
+---
+- hosts: 192.168.0.104
+  collections:
+    - fortinet.fortimanager
+  connection: httpapi
+  vars:
+     ansible_httpapi_use_ssl: True
+     ansible_httpapi_validate_certs: False
+     ansible_httpapi_port: 443
+  tasks:
+   - name: Script table.
+     fmgr_dvmdb_script:
+        adom: SD-WAN-Lab
+        state: present
+        dvmdb_script:
+           content:
+config system interface
+  edit internal
+    set ip 172.19.6.1 255.255.255.0
+    set mode static
+    set type hard-switch
+    set allowaccess ping https ssh fgfm fabric
+    set vdom root
+  next
+ end
+config system global
+  set hostname \"fgt-warehouse-ansible\"
+  set gui-device-latitude \"54.5973\"
+  set gui-device-longitude \"-5.9301\"
+end
+
+           name: Configure Warehouse Interface
+           script_schedule:
+             -
+                 datetime: <value of string>
+                 day_of_week: <value in [unknown, sun, mon, ...]>
+                 device: fgt-warehouse-ansible
+                 name: Configure Warehouse Interface
+                 run_on_db: enable
+                 type: onetime
+           target: device_database
+           type: cli
