@@ -19,6 +19,7 @@
            script_schedule:
              -
 
+                 day_of_week: unknown
                  device: fgt-warehouse-ansible
                  name: LAN Interface
                  run_on_db: enable
