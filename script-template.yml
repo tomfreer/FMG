@@ -26,7 +26,7 @@
                           {
                             "name": "{{name_fgt_ztp}}",
                             "vdom": "root"
-          },
+          }
         ]
       }
     }
