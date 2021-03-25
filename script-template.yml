@@ -8,20 +8,29 @@
      ansible_httpapi_validate_certs: False
      ansible_httpapi_port: 443
   tasks:
-    -   name: 'login another user'
+    -   name: 'Add device to template group'
         fmgr_generic:
              json: |
                   {
-                   "method":"exec",
+                   "method":"update",
                    "params":[
                     {
-                         "url":"sys/login/user",
+                         "url":"pm/config/adom/SD-WAN-Lab/obj/cli/template-group",
                          "data":[
                             {
-                               "user":"APIUser",
-                               "passwd":"Fortinet1!"
+                               "name":"Warehouse-New",
+                               "member": [
+                                  "warehouse-New-Overlay",
+                                  "WarehouseNew-BGP"
+                                  ],
+                                "scope member": [
+                                  {
+                                    "name": "fgt-warehouse-ansible",
+                                    "vdom": "root"
+                                  },
+                                 ]
+                                }
+                               ]
+                              }
+                             ]
                             }
-                          ]
-                     }
-                    ]
-                  }
