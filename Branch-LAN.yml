@@ -10,7 +10,7 @@
   tasks:
     -   name: 'Branch-LAN'
         fmgr_generic:
-             json: |
+             json: >
                   {
                    "method":"update",
                    "params": [
