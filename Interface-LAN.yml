@@ -12,21 +12,22 @@
      fmgr_dvmdb_script:
         adom: SD-WAN-Lab
         state: present
-        dvmdb_script:
-           content:config system interface
-                     edit internal
-                       set ip 172.19.6.1 255.255.255.0
-                       set mode static
-                       set type hard-switch
-                       set allowaccess ping https ssh fgfm fabric
-                       set vdom root
-                     next
-                    end
-                  config system global
-                    set hostname \"{{name_fgt_ztp}}\"
-                    set gui-device-latitude \"54.5973\"
-                    set gui-device-longitude \"-5.9301\"
-                  end
+        dvmdb_script:"
+config system interface
+  edit internal
+    set ip 172.19.6.1 255.255.255.0
+    set mode static
+    set type hard-switch
+    set allowaccess ping https ssh fgfm fabric
+    set vdom root
+  next
+ end
+config system global
+  set hostname \"{{name_fgt_ztp}}\"
+  set gui-device-latitude \"54.5973\"
+  set gui-device-longitude \"-5.9301\"
+end"
+           content:
            desc: Add LAN Interface
            name: LAN Interface
            target: device_database
