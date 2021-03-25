@@ -23,8 +23,7 @@ config system interface
    set vdom root
   next
  end
-           content:
-           desc: Add LAN Interface
-           name: LAN Interface
-           target: device_database
-           type: cli
+        desc: Add LAN Interface
+        name: LAN Interface
+        target: device_database
+        type: cli
