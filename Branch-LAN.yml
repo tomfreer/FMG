@@ -24,21 +24,25 @@
                        name: Warehouse_1
                        vdom: root
                  local-intf: internal
+
                  _scope:
                    -
                        name: Branch_1
                        vdom: root
                  local-intf: port3                 
+
                  _scope:
                    -
                        name: Branch_2
                        vdom: root
                  local-intf: port3                  
+
                   _scope:
                    -
                        name: AWS-FGT
                        vdom: root
                  local-intf: port2
+
                   _scope:
                    -
                        name: fgt-warehouse-ansible
