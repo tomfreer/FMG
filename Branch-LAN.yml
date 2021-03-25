@@ -15,7 +15,7 @@
                    "method":"update",
                    "params": [
                         {
-                           "url": "/pm/config/adom/SD-WAN-Lab/obj/dynamic/interface/",
+                           "url": "/pm/config/adom/SD-WAN-Lab/obj/dynamic/interface/",,
                            "data": [
                                 {
                                     "name": "Branch-LAN",
