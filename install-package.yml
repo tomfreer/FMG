@@ -1,0 +1,21 @@
+---
+- hosts: 192.168.0.104
+  collections:
+    - fortinet.fortimanager
+  connection: httpapi
+  vars:
+     ansible_httpapi_use_ssl: True
+     ansible_httpapi_validate_certs: False
+     ansible_httpapi_port: 443
+  tasks:
+   - name: Copy and install a policy package to devices.
+     fmgr_securityconsole_install_package:
+        securityconsole_install_package:
+           adom: SD-WAN-Lab
+           flags:
+             - none
+           pkg: Warehouse-PP
+           scope:
+             -
+                 name: Warehouse-Group
+                 vdom: root
