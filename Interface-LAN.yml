@@ -23,14 +23,16 @@ config system interface
     set vdom root
   next
  end
-           name: Configure Warehouse Interface
-           script_schedule:
-             -
-                 datetime: <value of string>
-                 day_of_week: <value in [unknown, sun, mon, ...]>
-                 device: fgt-warehouse-ansible
-                 name: Configure Warehouse Interface
-                 run_on_db: enable
-                 type: onetime
-           target: device_database
-           type: cli
+
+
+     name: Configure Warehouse Interface
+     script_schedule:
+       -
+         datetime: <value of string>
+         day_of_week: <value in [unknown, sun, mon, ...]>
+         device: fgt-warehouse-ansible
+         name: Configure Warehouse Interface
+         run_on_db: enable
+         type: onetime
+     target: device_database
+     type: cli
