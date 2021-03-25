@@ -47,5 +47,6 @@
                    -
                        name: fgt-warehouse-ansible
                        vdom: root
-                 local-intf: internal                  
+                 local-intf: internal
+                 
            name: Branch-LAN
