@@ -57,7 +57,7 @@
                                           "vdom": "root"
                                                 },
                                       "local-intf": "port2"
-                                },
+                                }
                                                    ],
                              "color": 11
                             },
@@ -88,7 +88,7 @@
                                       "vdom": "root"
                                             },
                                   "local-intf": "wan1"
-                                },
+                                }
                                                   ],
                              "color": 2
                                 },
