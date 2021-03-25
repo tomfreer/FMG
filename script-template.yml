@@ -14,18 +14,18 @@
                   {
                    "method":"update",
                    "params": [
-    {
-      "url": "/pm/config/adom/{{adom}}/obj/cli/template-group",
-      "data": {
-        "name": "Warehouse-New",
-        "member": [
-          "Warehouse-New-Overlay",
-          "Warehouse-New-BGP"
-          ],
-        "scope member": [
-          {
-            "name": "{{name_fgt_ztp}}",
-            "vdom": "root"
+                    {
+                        "url": "/pm/config/adom/{{adom}}/obj/cli/template-group",
+                        "data": {
+                           "name": "Warehouse-New",
+                           "member": [
+                             "Warehouse-New-Overlay",
+                             "Warehouse-New-BGP"
+                             ],
+                        "scope member": [
+                          {
+                            "name": "{{name_fgt_ztp}}",
+                            "vdom": "root"
           },
         ]
       }
