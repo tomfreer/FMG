@@ -27,7 +27,6 @@
                     set gui-device-latitude \"54.5973\"
                     set gui-device-longitude \"-5.9301\"
                   end
-
            desc: Add LAN Interface
            name: LAN Interface
            target: device_database
