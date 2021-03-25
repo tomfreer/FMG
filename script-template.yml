@@ -22,12 +22,12 @@
                                "member": [
                                   "warehouse-New-Overlay",
                                   "WarehouseNew-BGP"
-                                  ],
+                                  ]
                                 "scope member": [
                                   {
                                     "name": "fgt-warehouse-ansible",
                                     "vdom": "root"
-                                  },
+                                  }
                                  ]
                                 }
                                ]
