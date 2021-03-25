@@ -59,7 +59,7 @@
                         }
                     ]
                     "color": 11
-                }
+                               }
                                 {
                     "name": "WAN1-ISP",
                     "description": "INET",
@@ -90,8 +90,7 @@
                         }
                     ]
                     "color": 2
-                }
-            ]
-        }
-    ]
-}
+                                 }
+                    }
+                           ]
+                   } 
