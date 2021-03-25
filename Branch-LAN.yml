@@ -13,7 +13,7 @@
         adom: SD-WAN-lab
         state: present
         dynamic_interface:
-           color: Green
+           color: '11'
            default-mapping: enable
            defmap-intf: port3
            description: Branch-LAN
