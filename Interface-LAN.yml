@@ -13,7 +13,16 @@
         adom: SD-WAN-Lab
         state: present
         dvmdb_script:
-           content: jj
+           content:
+config system interface
+  edit internal
+    set ip 172.19.6.1 255.255.255.0
+    set mode static
+    set type hard-switch
+    set allowaccess ping https ssh fgfm fabric
+    set vdom root
+  next
+ end           
            desc: Add LAN Interface
            name: LAN Interface
            target: device_database
