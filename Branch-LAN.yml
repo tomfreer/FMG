@@ -8,89 +8,40 @@
      ansible_httpapi_validate_certs: False
      ansible_httpapi_port: 443
   tasks:
-    -   name: 'Branch LAN'
-        fmgr_generic:
-             json: |
-                  {
-                   "method":"update",
-                   "params": [
-                    {
-                        "url": "/pm/config/adom/SD-WAN-Lab/obj/dynamic/interface/",
-                        "data": {
-                        "name": "Branch-LAN",
-                        "description": "Branch-LAN",
-                        "default-mapping": 1,
-                        "defmap-intf": "Port3",                    
-                        "dynamic_mapping": [
-                        {
-                            "_scope": {
-                                "name": "Warehouse_1",
-                                "vdom": "root"
-                            }
-                            "local-intf": "internal"
-                        }
-                        {
-                            "_scope": {
-                                "name": "Branch_1",
-                                "vdom": "root"
-                            }
-                            "local-intf": "port3"
-                        }
-                         {
-                            "_scope": {
-                                "name": "Branch_2",
-                                "vdom": "root"
-                            }
-                            "local-intf": "port3"
-                        }
-                         {
-                            "_scope": {
-                                "name": "fgt-warehouse-ansible",
-                                "vdom": "root"
-                            },
-                            "local-intf": "internal"
-                        }                        
-                        {
-                            "_scope": {
-                                "name": "AWS-FGT",
-                                "vdom": "root"
-                            }
-                            "local-intf": "port2"
-                        }
-                    ]
-                    "color": 11
-                               }
-                                {
-                        "name": "WAN1-ISP",
-                        "description": "INET",
-                        "single-intf": 1,
-                        "default-mapping": 1,
-                        "defmap-intf": "port1",
-                        "dynamic_mapping": [
-                        {
-                            "_scope": {
-                                "name": "Tom_Lab_FGT1",
-                                "vdom": "root"
-                            }
-                            "local-intf": "wan1"
-                        }
-                        {
-                            "_scope": {
-                                "name": "fgt-warehouse-ansible",
-                                "vdom": "root"
-                            }
-                            "local-intf": "wan1"
-                        }                        
-                                                {
-                            "_scope": {
-                                "name": "Warehouse_1",
-                                "vdom": "root"
-                            }
-                            "local-intf": "wan1"
-                        }
-                    ]
-                        "color": 2
-                                 }
-                    }
-                           ]
-                   } 
+   - name: Branch-LAN
+     fmgr_dynamic_interface:
+        adom: SD-WAN-lab
+        state: present
+        dynamic_interface:
+           color: Green
+           default-mapping: enable
+           defmap-intf: port3
+           description: Branch-LAN
+           dynamic_mapping:
+             -
+                 _scope:
+                   -
+                       name: Warehouse_1
+                       vdom: root
+                 local-intf: internal
+                 _scope:
+                   -
+                       name: Branch_1
+                       vdom: root
+                 local-intf: port3                 
+                 _scope:
+                   -
+                       name: Branch_2
+                       vdom: root
+                 local-intf: port3                  
+                  _scope:
+                   -
+                       name: AWS-FGT
+                       vdom: root
+                 local-intf: port2
+                  _scope:
+                   -
+                       name: fgt-warehouse-ansible
+                       vdom: root
+                 local-intf: internal                  
+           name: Branch-LAN
