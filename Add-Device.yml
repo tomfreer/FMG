@@ -23,8 +23,7 @@
               mr: '4'
               platform_str: FortiGate-60E
               sn: FGT60ETK18041540
-            groups: 
-              -
+           groups: 
+             -
                   name: Warehouse-Group
                   adom: SD-WAN-Lab
-
