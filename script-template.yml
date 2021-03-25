@@ -10,7 +10,7 @@
   tasks:
     -   name: 'Add device to template group'
         fmgr_generic:
-             json: |
+             json: |,
                   {
                    "method":"update",
                    "params":[
