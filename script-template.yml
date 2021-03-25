@@ -13,24 +13,22 @@
              json: |
                   {
                    "method":"update",
-                   "params":[
-                    {
-                         "url":"/pm/config/adom/SD-WAN-Lab/obj/cli/template-group",
-                         "data":[
-                            {
-                               "name":"Warehouse-New",
-                               "member": [
-                                  "warehouse-New-Overlay",
-                                  "WarehouseNew-BGP"
-                                  ]
-                                "scope member": [
-                                  {
-                                    "name": "fgt-warehouse-ansible",
-                                    "vdom": "root"
-                                  }
-                                 ]
-                                }
-                               ]
-                              }
-                             ]
-                            }
+                   "params": [
+    {
+      "url": "/pm/config/adom/{{adom}}/obj/cli/template-group",
+      "data": {
+        "name": "Warehouse-New",
+        "member": [
+          "Warehouse-New-Overlay",
+          "Warehouse-New-BGP"
+          ],
+        "scope member": [
+          {
+            "name": "{{name_fgt_ztp}}",
+            "vdom": "root"
+          },
+        ]
+      }
+    }
+  ]
+}
