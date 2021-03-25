@@ -13,26 +13,15 @@
         adom: SD-WAN-Lab
         state: present
         dvmdb_script:
-           content:
-config system interface
-  edit internal
-    set ip 172.19.6.1 255.255.255.0
-    set mode static
-    set type hard-switch
-    set allowaccess ping https ssh fgfm fabric
-    set vdom root
-  next
- end
+           content: dddd
+           desc: Add LAN Interface
+           name: LAN Interface
+           script_schedule:
+             -
 
-
-     name: Configure Warehouse Interface
-     script_schedule:
-       -
-         datetime: <value of string>
-         day_of_week: <value in [unknown, sun, mon, ...]>
-         device: fgt-warehouse-ansible
-         name: Configure Warehouse Interface
-         run_on_db: enable
-         type: onetime
-     target: device_database
-     type: cli
+                 device: fgt-warehouse-ansible
+                 name: LAN Interface
+                 run_on_db: enable
+                 type: onetime
+           target: device_database
+           type: cli
