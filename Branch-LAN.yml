@@ -23,22 +23,22 @@
                    -
                        name: Warehouse_1
                        vdom: root
-                           local-intf: internal
+                    local-intf: internal
                    
                        name: Branch_1
                        vdom: root
-                           local-intf: port3                 
+                    local-intf: port3                 
                    
                        name: Branch_2
                        vdom: root
-                           local-intf: port3                  
+                    local-intf: port3                  
                    
                        name: AWS-FGT
                        vdom: root
-                           local-intf: port2
+                    local-intf: port2
                    
                        name: fgt-warehouse-ansible
                        vdom: root
-                           local-intf: internal
+                    local-intf: internal
                  
            name: Branch-LAN
