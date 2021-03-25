@@ -16,6 +16,6 @@
         dynamic_interface_dynamicmapping:
            _scope:
              -
-                  name: AWS-FGT
+                  name: fgt-warehouse-ansible
                   vdom: root
-           local-intf: port2
+           local-intf: internal
