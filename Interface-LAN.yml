@@ -23,11 +23,6 @@
                  set vdom root
                next
              end
-             config system global
-               set hostname fgt-warehouse-ansible
-               set guidevice-latitude 54.59.73
-               set gui-device-longitude -5.9301
-             end               
            desc: Add LAN Interface
            name: LAN Interface
            target: device_database
