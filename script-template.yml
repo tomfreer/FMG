@@ -24,7 +24,7 @@
                              ],
                         "scope member": [
                           {
-                            "name": "{{name_fgt_ztp}}",
+                            "name": "fgt-warehouse-ansible",
                             "vdom": "root"
                           }
                       ]
