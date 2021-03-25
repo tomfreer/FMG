@@ -16,6 +16,6 @@
         dynamic_interface_dynamicmapping:
            _scope:
              -
-                  name: Warehouse_1
+                  name: Branch_1
                   vdom: root
-           local-intf: internal
+           local-intf: port3
