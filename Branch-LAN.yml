@@ -17,11 +17,11 @@
                     {
                         "url": "/pm/config/adom/SD-WAN-Lab/obj/dynamic/interface/",
                         "data": {
-                    "name": "Branch-LAN",
-                    "description": "Branch-LAN",
-                    "default-mapping": 1,
-                    "defmap-intf": "Port3",                    
-                    "dynamic_mapping": [
+                        "name": "Branch-LAN",
+                        "description": "Branch-LAN",
+                        "default-mapping": 1,
+                        "defmap-intf": "Port3",                    
+                        "dynamic_mapping": [
                         {
                             "_scope": {
                                 "name": "Warehouse_1",
@@ -61,12 +61,12 @@
                     "color": 11
                                }
                                 {
-                    "name": "WAN1-ISP",
-                    "description": "INET",
-                    "single-intf": 1,
-                    "default-mapping": 1,
-                    "defmap-intf": "port1",
-                    "dynamic_mapping": [
+                        "name": "WAN1-ISP",
+                        "description": "INET",
+                        "single-intf": 1,
+                        "default-mapping": 1,
+                        "defmap-intf": "port1",
+                        "dynamic_mapping": [
                         {
                             "_scope": {
                                 "name": "Tom_Lab_FGT1",
@@ -89,7 +89,7 @@
                             "local-intf": "wan1"
                         }
                     ]
-                    "color": 2
+                        "color": 2
                                  }
                     }
                            ]
