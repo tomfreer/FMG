@@ -12,25 +12,16 @@
         fmgr_generic:
              json: |
                   {
-                   "method":"update",
+                   "method":"exec",
                    "params":[
                     {
-                         "url":"/pm/config/adom/SD-WAN-Lab/obj/cli/template-group",
+                         "url":"sys/login/user",
                          "data":[
                             {
-                               "name": "Warehouse-New",
-                               "member": [
-                                  "Warehouse-New-Overlay",
-                                  "Warehouse-New-BGP"
-                                   ],
-                               "scope member": [
-                                 {
-                                  "name": "fgt-warehouse-ansible",
-                                  "vdom": "root"
+                               "user":"APIUser",
+                               "passwd":"Fortinet1!"
                             }
                           ]
                      }
                     ]
                   }
-                }
-               }
