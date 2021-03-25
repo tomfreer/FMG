@@ -13,8 +13,8 @@
         adom: SD-WAN-Lab
         state: present
         dvmdb_script:
-        content: jj
-        desc: Add LAN Interface
-        name: LAN Interface
-        target: device_database
-        type: cli
+           content: jj
+           desc: Add LAN Interface
+           name: LAN Interface
+           target: device_database
+           type: cli
