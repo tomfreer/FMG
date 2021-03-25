@@ -16,7 +16,7 @@
            color: Green
            default-mapping: enable
            defmap-intf: Port3
-           description: Update Branch-Lan
+           description: <value of string>
            dynamic_mapping:
              -
                  _scope:
@@ -24,23 +24,23 @@
                        name: Warehouse_1
                        vdom: root
                  local-intf: internal
-                   -
+                   
                        name: Branch_1
                        vdom: root
                  local-intf: port3
-                   -
+                   
                        name: Branch_2
                        vdom: root
                  local-intf: port3
-                    -
+                    
                        name: AWS-FGT
                        vdom: root
                  local-intf: port2                
-                     -
+                     
                        name: Warehouse_1
                        vdom: root
                  local-intf: internal
-                     -
+                     
                        name: fgt-warehouse-ansible
                        vdom: root
                  local-intf: internal                 
