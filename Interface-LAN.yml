@@ -23,12 +23,6 @@ config system interface
     set vdom root
   next
  end
-#config system global
-#  set hostname \"fgt-warehouse-ansible\"
-#  set gui-device-latitude \"54.5973\"
-#  set gui-device-longitude \"-5.9301\"
-#end
-
            name: Configure Warehouse Interface
            script_schedule:
              -
