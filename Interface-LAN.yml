@@ -12,7 +12,8 @@
      fmgr_dvmdb_script:
         adom: SD-WAN-Lab
         state: present
-        dvmdb_script:"
+        dvmdb_script:
+        content:"
 config system interface
   edit internal
     set ip 172.19.6.1 255.255.255.0
