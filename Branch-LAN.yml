@@ -14,10 +14,10 @@
                   {
                    "method":"update",
                    "params": [
-                        {
-                           "url": "/pm/config/adom/SD-WAN-Lab/obj/dynamic/interface/",
-                           "data": [
-                                {
+                    {
+                        "url": "/pm/config/adom/SD-WAN-Lab/obj/dynamic/interface/",
+                        "data": {
+                                
                                     "name": "Branch-LAN",
                                     "description": "Branch-LAN",
                                     "default-mapping": 1,
@@ -61,7 +61,7 @@
                                     ] 
                                     "color": 11
                                 }
-                                    ]
-                        }
-                                 ]
+                                ]
+                    }
+                                 
                      }    
