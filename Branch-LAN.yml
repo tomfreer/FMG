@@ -16,6 +16,6 @@
         dynamic_interface_dynamicmapping:
            _scope:
              -
-                  name: Branch_1
+                  name: Branch_2
                   vdom: root
            local-intf: port3
