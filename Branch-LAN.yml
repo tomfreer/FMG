@@ -12,33 +12,11 @@
      fmgr_dynamic_interface_dynamicmapping:
         adom: SD-WAN-Lab
         state: present
-        dynamic_interface:
-           color: '11'
-           default-mapping: enable
-           defmap-intf: port3
-           description: Branch-LAN
-           dynamic_interface_dynamicmapping:
+        interface: Branch-LAN
+        dynamic_interface_dynamicmapping:
              -
                  _scope:
                    -
                        name: Warehouse_1
                        vdom: root
-                       local-intf: internal
-                   -
-                       name: Branch_1
-                       vdom: root
-                       local-intf: port3                 
-                   -
-                       name: Branch_2
-                       vdom: root
-                       local-intf: port3                  
-                   -
-                       name: AWS-FGT
-                       vdom: root
-                       local-intf: port2
-                   -
-                       name: fgt-warehouse-ansible
-                       vdom: root
-                       local-intf: internal
-                 
-           name: Branch-LAN
+                local-intf: internal
