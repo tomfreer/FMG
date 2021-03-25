@@ -8,12 +8,12 @@
      ansible_httpapi_validate_certs: False
      ansible_httpapi_port: 443
   tasks:
-    -   name: 'login a user'
+    -   name: Script Template Update
         fmgr_generic:
-             method: 'update'
-             params:
-                - url: '/pm/config/adom/SD-WAN-Lab/obj/cli/template-group'
-                  "data": {
+            json: |
+                     {
+      "url": "/pm/config/adom/{{adom}}/obj/cli/template-group",
+      "data": {
         "name": "Warehouse-New",
         "member": [
           "Warehouse-New-Overlay",
@@ -21,11 +21,10 @@
           ],
         "scope member": [
           {
-            "name": "{{name_fgt_ztp}}",
+            "name": "fgt-warehouse-ansible",
             "vdom": "root"
           },
         ]
       }
     }
   ]
-}
