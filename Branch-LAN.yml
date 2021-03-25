@@ -17,51 +17,20 @@
                     {
                         "url": "/pm/config/adom/SD-WAN-Lab/obj/dynamic/interface/",
                         "data": {
-                                
-                                    "name": "Branch-LAN",
-                                    "description": "Branch-LAN",
-                                    "default-mapping": 1,
-                                    "defmap-intf": "Port3",
-                                    "dynamic_mapping": [
-                                         {  
-                                              "_scope": {    
-                                                  "name": "Warehouse_1",
-                                                  "vdom": "root"
-                                              }     
-                                              "local-intf": "internal"
-                                         } 
-                                         {                                         
-                                              "_scope": {
-                                                  "name": "Branch_1",
-                                                  "vdom": "root"
-                                               }
-                                               "local-intf": "port3"
-                                         }
-                                         {
-                                              "_scope": {
-                                                  "name": "Branch_2",
-                                                  "vdom": "root"
-                                               }
-                                               "local-intf": "port3"
-                                          }
-                                         {
-                                              "_scope": {
-                                                  "name": "AWS-FGT",
-                                                  "vdom": "root"
-                                               }
-                                               "local-intf": "port2"
-                                          }                                          
-                                                                                   {
-                                              "_scope": {
-                                                  "name": "fgt-warehouse-ansible",
-                                                  "vdom": "root"
-                                               }
-                                               "local-intf": "internal"
-                                          }
-                                    ] 
-                                    "color": 11
+                           "name": "Branch-LAN",
+                           "description": "Branc-LAN",
+                           "default-mapping": "1",
+                           "defmap-intf": "port3",                           
+                           "dynamic_mapping": [
+                                {
+                                    "_scope": {
+                                        "name": "Warehouse_1",
+                                        "vdom": "root"
+                                    }
+                                    "local-intf": "internal"
                                 }
-                                ]
+                                              ]
+                                }
                     }
-                                 
-                     }    
+                              ]
+                  }
