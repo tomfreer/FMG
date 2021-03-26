@@ -29,4 +29,3 @@
                     flags:
                       - create_task
                       - nonblocking
-        register: installing_task  
