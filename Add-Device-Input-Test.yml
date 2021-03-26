@@ -15,7 +15,7 @@
            adom: SD-WAN-Lab
            device:
               device action: add_model
-              adm_usr: fgtadmin
+              adm_usr: "{{username}}"
               mgmt_mode: fmgfaz
               name: "{{Dname}}"
               os_type: fos
@@ -25,5 +25,5 @@
               sn: "{{SN}}"
            groups: 
              -
-                  name: Warehouse-Group
+                  name: "{{group}}"
                   adom: SD-WAN-Lab
