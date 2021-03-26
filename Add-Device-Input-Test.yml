@@ -21,8 +21,6 @@
               os_type: fos
               os_ver: '6.0'
               mr: '4'
-              platform_str: 
-              sn: 
            groups: 
              -
                   name: Warehouse-Group
