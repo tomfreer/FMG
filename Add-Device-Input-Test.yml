@@ -8,22 +8,22 @@
      ansible_httpapi_validate_certs: False
      ansible_httpapi_port: 443
   tasks:
-   - name: Add details to FMG
+   - name: Add a device to the Device Manager database.
      fmgr_dvm_cmd_add_device:
         bypass_validation: False
         dvm_cmd_add_device:
            adom: SD-WAN-Lab
            device:
               device action: add_model
-              adm_usr: "{{username}}"
+              adm_usr: fgtadmin
               mgmt_mode: fmgfaz
               name: "{{system-name}}"
               os_type: fos
               os_ver: '6.0'
               mr: '4'
-              platform_str: "{{model}}"
-              sn: "{{SN}}"
+              platform_str: FortiGate-81E-POE
+              sn: FG81EPTK19002078
            groups: 
              -
-                  name: "{{Group}}"
+                  name: Warehouse-Group
                   adom: SD-WAN-Lab
