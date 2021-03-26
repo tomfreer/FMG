@@ -14,6 +14,7 @@
         dvm_cmd_add_device:
            adom: SD-WAN-Lab
            device:
+              device action: add_model
               adm_usr: fgtadmin
               adm_pass: Fortinet!)
               mgmt_mode: fmgfaz
@@ -23,6 +24,9 @@
               mr: '4'
               platform_str: FortiGate-60E
               sn: FGT60ETK18041540
+            flags:
+              - create_task
+              - nonblocking              
            groups: 
              -
                   name: Warehouse-Group
