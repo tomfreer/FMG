@@ -12,14 +12,14 @@
      fmgr_dvmdb_device:
         bypass_validation: False
         adom: SD-WAN-Lab
-        device: "{{Device Name}}"
+        device: "{{devicename}}"
         dvmdb_device:
-           hostname: fgt-warehouse-ansible
-           latitude: '54.5973'
-           longitude: '-5.9301'
+           hostname: "{{hostname}}"
+           latitude: "{{latitude}}"
+           longitude: "{{longitude}}"
            meta fields: 
-              address: Belfast, England
-              branch-id: '4'
+              address: "{{citycountry}}"
+              branch-id: "{{branchid}}"
               remote-dc-id:
-              BGP-code: '19.6.0'
-           name: fgt-warehouse-ansible
+              BGP-code: "{{networksubnet}}"
+           name: "{{devicename1}}"
