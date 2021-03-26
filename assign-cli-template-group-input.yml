@@ -1,3 +1,4 @@
+
 ---
 - hosts: 192.168.0.104
   collections:
@@ -24,7 +25,7 @@
                              ],
                         "scope member": [
                           {
-                            "name": fgt-warehouse-ansible,
+                            "name": "fgt-warehouse-ansible",
                             "vdom": "root"
                           }
                       ]
