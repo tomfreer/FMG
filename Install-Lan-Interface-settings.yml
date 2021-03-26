@@ -1,0 +1,20 @@
+---
+- hosts: 192.168.0.104
+  collections:
+    - fortinet.fortimanager
+  connection: httpapi
+  vars:
+     ansible_httpapi_use_ssl: True
+     ansible_httpapi_validate_certs: False
+     ansible_httpapi_port: 443
+  tasks:
+   - name: Run script.
+     fmgr_dvmdb_script_execute:
+        adom: SD-WAN-Lab
+        dvmdb_script_execute:
+           adom: SD-WAN-Lab
+           scope:
+             -
+                 name: "{{deviceName}}"
+                 vdom: root
+           script: LAN Interface
