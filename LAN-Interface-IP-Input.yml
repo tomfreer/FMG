@@ -16,7 +16,7 @@
            content: >
              config system interface
                edit internal
-                 set ip %LAN-IP
+                 set ip %(LAN-IP) 255.255.255.0
                  set mode static
                  set type hard-switch
                  set allowaccess ping https ssh fgfm fabric
