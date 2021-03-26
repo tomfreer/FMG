@@ -15,9 +15,9 @@
            adom: SD-WAN-Lab
            device:
               device action: add_model
-              adm_usr: fgtadmin
+              adm_usr: "{{username}}"
               mgmt_mode: fmgfaz
-              name: fgt-warehouse-ansible
+              name: "{{device-name}}"
               os_type: fos
               os_ver: '6.0'
               mr: '4'
@@ -25,5 +25,5 @@
               sn: "{{SN}}"
            groups: 
              -
-                  name: Warehouse-Group
+                  name: "{{Group}}"
                   adom: SD-WAN-Lab
