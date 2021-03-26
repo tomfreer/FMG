@@ -22,7 +22,6 @@
                        name: fgt-warehouse-ansible
                        platform_str: FortiGate-60E
                        sn: FGT60ETK18041540
-                       name: fgt-warehouse-ansible
                        os_type: fos
                        os_ver: '6.0'
                        mr: '4'
