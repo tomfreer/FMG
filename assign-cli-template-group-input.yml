@@ -24,7 +24,7 @@
                              ],
                         "scope member": [
                           {
-                            "name": "dog",
+                            "name": "{{deviceName}}",
                             "vdom": "root"
                           }
                       ]
