@@ -21,4 +21,3 @@
               address: "{{city, country}}"
               branch-id: "{{branch-id}}"
               BGP-code: "{{Branch Subnet}}"
-           name: "{{Device-Name}}"
