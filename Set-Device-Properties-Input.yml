@@ -12,7 +12,7 @@
      fmgr_dvmdb_device:
         bypass_validation: False
         adom: SD-WAN-Lab
-        device: "{{Device-Name}}"
+        device: fgt-warehouse-ansible
         dvmdb_device:
            hostname: "{{fgt-warehouse-ansible}}"
            latitude: "{{latitiude}}"
