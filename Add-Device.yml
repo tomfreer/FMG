@@ -8,23 +8,24 @@
      ansible_httpapi_validate_certs: False
      ansible_httpapi_port: 443
   tasks:
-       - name: Create the task to add the device
-         fmgr_generic:
-           method: exec
-           params:
-              - url: /dvm/cmd/add/device
-                data:
-                    adom: SD-WAN-Lab
-                    device:
-                       adm_usr: fgtadmin
-                       desc: "The device is added via Ansible"
-                       mgmt_mode: "fmgfaz"
-                       name: fgt-warehouse-ansible
-                       platform_str: FortiGate-60E
-                       sn: FGT60ETK18041540
-                       os_type: fos
-                       os_ver: '6.0'
-                       mr: '4'
-                    flags:
-                      - create_task
-                      - nonblocking
+    - name: Create the task to add the device
+      fmgr_generic:
+         method: exec
+         params:
+            - url: /dvm/cmd/add/device
+              data:
+                  adom: root
+                  device:
+                     adm_usr: fgtadmin
+                     desc: "The device is added via Ansible"
+                     mgmt_mode: "fmgfaz"
+                     name: fgt-warehouse-ansible
+                     platform_str: FortiGate-60E
+                     sn: FGT60ETK18041540
+                     os_type: fos
+					 os_ver: '6.0'
+					 mr: '4'
+                  flags:
+                    - create_task
+                    - nonblocking
+      register: installing_task
