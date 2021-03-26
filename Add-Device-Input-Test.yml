@@ -17,7 +17,7 @@
               device action: add_model
               adm_usr: fgtadmin
               mgmt_mode: fmgfaz
-              name: fgt-warehouse-ansible
+              name: {{Dname}}
               os_type: fos
               os_ver: '6.0'
               mr: '4'
