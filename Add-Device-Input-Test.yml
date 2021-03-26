@@ -8,7 +8,7 @@
      ansible_httpapi_validate_certs: False
      ansible_httpapi_port: 443
   tasks:
-   - name: Add a device to the Device Manager database.
+   - name: Add details to FMG
      fmgr_dvm_cmd_add_device:
         bypass_validation: False
         dvm_cmd_add_device:
