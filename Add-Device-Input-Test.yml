@@ -21,6 +21,8 @@
               os_type: fos
               os_ver: '6.0'
               mr: '4'
+              platform_str: FortiGate-81E-POE
+              sn: FG81EPTK19002078
            groups: 
              -
                   name: Warehouse-Group
