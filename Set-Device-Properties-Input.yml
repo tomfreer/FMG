@@ -8,7 +8,7 @@
      ansible_httpapi_validate_certs: False
      ansible_httpapi_port: 443
   tasks:
-   - name: Device table, most attributes are read-only and can only be changed internally. Refer to Device Manager Command module for API to add, d...
+   - name: Add Device Details
      fmgr_dvmdb_device:
         bypass_validation: False
         adom: SD-WAN-Lab
