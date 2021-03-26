@@ -21,5 +21,6 @@
               address: "{{citycountry}}"
               branch-id: "{{branchid}}"
               remote-dc-id:
+              LAN-IP: ""{{LAN-IP}}"
               BGP-code: "{{networksubnet}}"
            name: "{{devicename1}}"
