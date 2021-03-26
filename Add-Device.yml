@@ -8,26 +8,27 @@
      ansible_httpapi_validate_certs: False
      ansible_httpapi_port: 443
   tasks:
-   - name: Add a device to the Device Manager database.
-     fmgr_dvm_cmd_add_device:
-        bypass_validation: False
-        dvm_cmd_add_device:
-           adom: SD-WAN-Lab
-           device:
-              device action: add_model
-              adm_usr: fgtadmin
-              adm_pass: Fortinet!)
-              mgmt_mode: fmgfaz
-              name: fgt-warehouse-ansible
-              os_type: fos
-              os_ver: '6.0'
-              mr: '4'
-              platform_str: FortiGate-60E
-              sn: FGT60ETK18041540
-           flags:
-              - create_task
-              - nonblocking              
-           groups: 
-             -
-                  name: Warehouse-Group
-                  adom: SD-WAN-Lab
+    - name: create task to add device
+      fmgr_generic:
+         method: exec
+         params:
+             - url: /dvm/cmd/discover/device
+               data:
+                   adom: SD-WAN-Lan
+                   device:
+                      name: fgt-warehouse-ansible
+                      adm_usr: fgtadmin
+                      mgmt_mode: fmgfaz
+                      name: fgt-warehouse-ansible
+                      os_type: fos
+                      os_ver: '6.0'
+                      mr: '4'
+                      platform_str: FortiGate-60E
+                      sn: FGT60ETK18041540
+                  flags:
+                    - create_task
+                    - nonblocking             
+                groups: 
+                  -
+                     name: Warehouse-Group
+                     adom: SD-WAN-Lab
