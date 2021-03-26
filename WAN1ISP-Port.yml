@@ -1,0 +1,22 @@
+
+---
+- hosts: 192.168.0.104
+  collections:
+    - fortinet.fortimanager
+  connection: httpapi
+  vars:
+     ansible_httpapi_use_ssl: True
+     ansible_httpapi_validate_certs: False
+     ansible_httpapi_port: 443
+  tasks:
+   - name: Branch-LAN
+     fmgr_dynamic_interface_dynamicmapping:
+        adom: SD-WAN-Lab
+        state: present
+        interface: WAN1-ISP
+        dynamic_interface_dynamicmapping:
+           _scope:
+             -
+                  name: fgt-warehouse-ansible
+                  vdom: root
+           local-intf: wan1
