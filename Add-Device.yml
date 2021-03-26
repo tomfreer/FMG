@@ -25,9 +25,9 @@
                       mr: '4'
                       platform_str: FortiGate-60E
                       sn: FGT60ETK18041540
-                  flags:
-                    - create_task
-                    - nonblocking             
+                    flags:
+                      - create_task
+                      - nonblocking             
                 groups: 
                   -
                      name: Warehouse-Group
