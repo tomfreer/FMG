@@ -23,7 +23,6 @@
               os_ver: '6.0'
               mr: '4'
               version: '600'
-              flags: '67371040'
               platform_str: FortiGate-60E
               sn: FGT60ETK18041540
            groups: 
