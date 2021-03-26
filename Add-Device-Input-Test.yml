@@ -17,7 +17,7 @@
               device action: add_model
               adm_usr: "{{username}}"
               mgmt_mode: fmgfaz
-              name: "{{device-name}}"
+              name: "{{system-name}}"
               os_type: fos
               os_ver: '6.0'
               mr: '4'
