@@ -1,0 +1,43 @@
+---
+- hosts: 192.168.0.104
+  collections:
+    - fortinet.fortimanager
+  connection: httpapi
+  vars:
+     ansible_httpapi_use_ssl: True
+     ansible_httpapi_validate_certs: False
+     ansible_httpapi_port: 443
+  tasks:
+   - name: VPN node for VPN Manager. Must specify vpntable and scope member.
+     fmgr_vpnmgr_node:
+        adom: SD-WAN-Lab
+        state: present
+        vpnmgr_node:
+           add-route: disable
+           assign-ip: enable
+           assign-ip-from: range
+           auto-configuration: enable
+           automatic_routing: disable
+           extgw_p2_per_net: disable
+           id: '9'
+           iface: "{{interfaceName}}"
+           ipsec-lease-hold: '60'
+           mode-cfg: enable
+           mode-cfg-ip-version: '4'
+           net-device: disable
+           peertype: any
+           protected_subnet:
+             -
+                 addr: all
+                 seq: '1'
+           role: spoke
+           route-overlap: use-old
+           tunnel-search: selectors
+           unity-support: enable
+           vpn-interface-priority: '0'
+           vpntable: "{{VPNcommunity}}"
+           xauthtype: client
+           scope member:
+             -
+                 name: "{{deviceName}}"
+                 vdom: root                 
