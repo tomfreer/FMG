@@ -15,11 +15,11 @@
         device: "{{Device-Name}}"
         dvmdb_device:
            hostname: "{{fgt-warehouse-ansible}}"
-           latitude: '"{{latitiude}}"'
-           longitude: '"{{longtidue}}"'
+           latitude: "{{latitiude}}"
+           longitude: "{{longtidue}}"
            meta fields: 
               address: "{{city, country}}"
-              branch-id: '"{{branch-id}}"'
+              branch-id: "{{branch-id}}"
               remote-dc-id:''
-              BGP-code: '"{{Branch Subnet}}"'
+              BGP-code: "{{'Branch Subnet'}}"
            name: "{{Device-Name}}"
