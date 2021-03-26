@@ -8,7 +8,7 @@
      ansible_httpapi_validate_certs: False
      ansible_httpapi_port: 443
   tasks:
-   - name: Add Device Details
+   - name: Add Details
      fmgr_dvmdb_device:
         bypass_validation: False
         adom: SD-WAN-Lab
