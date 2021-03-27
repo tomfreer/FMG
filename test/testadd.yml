@@ -19,7 +19,7 @@
                         - create_task
                         - nonblocking
                     device:
-                        name: ansiblefgt
+                        name: fgt-warehouse-ansible
                         adm_usr: fgtadmin
                         os_ver: 6
                         version: 600
