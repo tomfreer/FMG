@@ -19,17 +19,17 @@
                         - create_task
                         - nonblocking
                     device:
-                        name: fgt-warehouse-ansible
+                        name: "{{deviceName}}"
                         adm_usr: fgtadmin
                         os_ver: 6
                         version: 600
                         os_type: 0
                         mr: 4
-                        platform_str: FortiGate-60E
+                        platform_str: "{{deviceModel}}"
                         mgmt_mode: 3
                         flags: 67371040
                         prefer_img_ver: null
-                        sn: FGT60ETK18041540
+                        sn: "{{deviceSN}}"
                         faz.perm: 15
                         faz.quota: 0
                     groups:
