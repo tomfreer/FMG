@@ -18,12 +18,10 @@
                       -
                         addr: all
                         seq: '1'
-                        
                     scope member:
                       -
                         name: "{{deviceName}}"
                         vdom: root
-                        
                     id: '9'
                     vpntable: OL_WAN1
                     role: '1'
