@@ -40,9 +40,9 @@
          fmgr_dvmdb_device:
             bypass_validation: False
             adom: SD-WAN-Lab
-            device: "{{devicename}}"
+            device: "{{deviceName}}"
             dvmdb_device:
-               hostname: "{{devicename}}"
+               hostname: "{{deviceName}}"
                latitude: "{{latitude}}"
                longitude: "{{longitude}}"
                meta fields: 
@@ -51,4 +51,4 @@
                   remote-dc-id:
                   LAN-IP: "{{LANIP}}"
                   BGP-code: "{{networksubnet}}"
-               name: "{{devicename}}"
+               name: "{{deviceName}}"
