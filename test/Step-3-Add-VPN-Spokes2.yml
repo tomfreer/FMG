@@ -8,22 +8,24 @@
      ansible_httpapi_validate_certs: False
      ansible_httpapi_port: 443
   tasks:
-           - name: Add VPN Spokes OL_WAN2
+      - name: Add VPN Spokes OL_WAN1
         fmgr_generic:
             method: exec
             params: 
                 - url: pm/config/adom/SD-WAN-Lab/obj/vpnmgr/node
                   data:
                     protected_subnet:
+                      -
                         addr: all
                         seq: 1
                         
                     scope member:
+                      -
                         name: "{{deviceName}}"
                         vdom: root
                         
-                    id: 10
-                    vpntable: OL_WAN2
+                    id: 9
+                    vpntable: OL_WAN1
                     role: 1
                     usrgrp: []
                     iface: "{{interfaceName1}}"
