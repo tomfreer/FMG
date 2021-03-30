@@ -1,3 +1,4 @@
+
 ---
 - hosts: 192.168.0.104
   collections:
@@ -12,12 +13,14 @@
      fmgr_dvmdb_device:
         bypass_validation: False
         adom: SD-WAN-Lab
-        device: "{{deviceName}}"
+        device: "{{devicename}}"
         dvmdb_device:
-           hostname: "{{deviceName}}"
-           latitude: "{{latitude}}"'
+           hostname: "{{hostname}}"
+           latitude: "{{latitude}}"
            longitude: "{{longitude}}"
            meta fields: 
-              address: "{{cityCountry}}"
-              branch-id: "{{branchID}}"
-              BGP-code: "{{BGPCode}}"
+              address: "{{citycountry}}"
+              branch-id: "{{branchid}}"
+              remote-dc-id:
+              LAN-IP: "{{LANIP}}"
+              BGP-code: "{{networksubnet}}"
