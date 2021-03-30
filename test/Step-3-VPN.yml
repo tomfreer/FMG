@@ -23,7 +23,7 @@
                          id: 9
                          vpntable: OL_WAN1
                          role: 1
-                         iface: "{{interfaceName}}"
+                         iface: "{{interfaceName1}}"
                          automatic_routing: 0
                          route-overlap: 0
                          vpn-interface-priority: 0
@@ -55,7 +55,7 @@
                          id: 10
                          vpntable: OL_WAN2
                          role: 1
-                         iface: "{{interfaceName}}"
+                         iface: "{{interfaceName2}}"
                          automatic_routing: 0
                          route-overlap: 0
                          vpn-interface-priority: 0
