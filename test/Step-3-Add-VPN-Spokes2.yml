@@ -41,7 +41,7 @@
                     assign-ip-from: '0'
                     exchange-interface-ip: '0'
                     mode-cfg: '1'
-                    mode-cfg-ip-version:' 0'
+                    mode-cfg-ip-version:'0'
                     net-device: '1'
                     peergrp: []
                     tunnel-search: '0'
