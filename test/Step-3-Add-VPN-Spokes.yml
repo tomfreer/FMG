@@ -12,7 +12,7 @@
         fmgr_generic:
             method: exec
             params: 
-                - url: pm/config/adom/"{{admon}}"/obj/vpnmgr/node
+                - url: pm/config/adom/SD-WAN-Lab/obj/vpnmgr/node
                   data:
                     protected_subnet:
                         addr: all
@@ -26,7 +26,7 @@
                     vpntable: OL_WAN1
                     role: 1
                     usergrp: []
-                    iface: "{{interfaceName}}"
+                    iface: "{{interfaceName1}}"
                     automatic_routing: 0
                     extgwip: []
                     extgw_p2_per_net: 0
@@ -60,7 +60,7 @@
                     vpntable: OL_WAN2
                     role: 1
                     usergrp: []
-                    iface: "{{interfaceName}}"
+                    iface: "{{interfaceName2}}"
                     automatic_routing: 0
                     extgwip: []
                     extgw_p2_per_net: 0
