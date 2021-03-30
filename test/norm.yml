@@ -8,15 +8,25 @@
      ansible_httpapi_validate_certs: False
      ansible_httpapi_port: 443
   tasks:
-    -    name: Normalize LAN
-         fmgr_generic:
-             method: update
-             params:
-                 - url: pm/config/adom/SD-WAN-Lab/obj/dynamic/interface/
-                   data:
-                          name: Branch-LAN
-                          dynamic_mapping:
-                               scope:                          
-                                   name: "{{deviceName}}"
-                                   vdom: root
-                               local-intf: "{{interfaceName}}"    
+   - name: Interface Branch-LAN
+     fmgr_dynamic_interface_dynamicmapping:
+        adom: SD-WAN-Lab
+        state: present
+        interface: Branch-LAN
+        dynamic_interface_dynamicmapping:
+           _scope:
+             -
+                  name: "{{deviceName}}"
+                  vdom: root
+           local-intf: "{{intName1}}"
+   - name: Interface WAN1-ISP
+     fmgr_dynamic_interface_dynamicmapping:
+        adom: SD-WAN-Lab
+        state: present
+        interface: WAN1-ISP
+        dynamic_interface_dynamicmapping:
+           _scope:
+             -
+                  name: "{{deviceName}}"
+                  vdom: root
+           local-intf: "{{intName2}}"
