@@ -33,7 +33,7 @@
                          assign-ip: 1
                          assign-ip-from: 0
                          exchange-interface-ip: 0
-                         mode-cfg:1
+                         mode-cfg: 1
                          mode-cfg-ip-version: 0
                          net-device: 1
                          peertype: 8
