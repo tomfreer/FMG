@@ -47,7 +47,8 @@
                     tunnel-search: 0
                     unity-support: 1
                     xauthtype: 1
-
+  
+  tasks:
       - name: Add VPN Spokes OL_WAN2
         fmgr_generic:
             method: exec
@@ -62,7 +63,7 @@
                         name: "{{deviceName}}"
                         vdom: root
                         
-                    id: 10
+                    id: 9
                     vpntable: OL_WAN2
                     role: 1
                     usergrp: []
