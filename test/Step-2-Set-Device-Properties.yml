@@ -15,7 +15,7 @@
         adom: SD-WAN-Lab
         device: "{{devicename}}"
         dvmdb_device:
-           hostname: "{{hostname}}"
+           hostname: "{{devicename}}"
            latitude: "{{latitude}}"
            longitude: "{{longitude}}"
            meta fields: 
