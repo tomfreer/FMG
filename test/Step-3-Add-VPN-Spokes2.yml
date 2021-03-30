@@ -10,7 +10,6 @@
   tasks:
            - name: Add VPN Spokes OL_WAN2
         fmgr_generic:
-session: '{{session}}'
 id: 1
 method: set
 params:
