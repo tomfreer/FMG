@@ -39,8 +39,8 @@
            script: LAN Interface
    - name: Assign Template
      fmgr_generic:
-     method: update
-     params:
+         method: update
+         params:
              - url: pm/config/adom/SD-WAN-Lab/obj/cli/template-group
                data:
                      name: Warehouse-New
@@ -49,4 +49,4 @@
                          - Warehouse-New-BGP
                      scope member:
                            name: "{{deviceName}}"
-                           vdom: root	
+                           vdom: root
