@@ -62,7 +62,7 @@
                         name: "{{deviceName}}"
                         vdom: root
                         
-                    id: 9
+                    id: 10
                     vpntable: OL_WAN2
                     role: 1
                     usergrp: []
