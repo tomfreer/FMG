@@ -37,16 +37,16 @@
                  name: "{{deviceName}}"
                  vdom: root
            script: LAN Interface
-    -    name: Assign Template
-         fmgr_generic:
-             method: update
-             params:
-                 - url: pm/config/adom/SD-WAN-Lab/obj/cli/template-group
-                   data:
-                        name: Warehouse-New
-                        member:
-                            - Warehouse-New-Overlay
-                            - Warehouse-New-BGP
-                        scope member:
-                              name: "{{deviceName}}"
-                              vdom: root
+   - name: Assign Template
+     fmgr_generic:
+     method: update
+         params:
+             - url: pm/config/adom/SD-WAN-Lab/obj/cli/template-group
+               data:
+                     name: Warehouse-New
+                     member:
+                         - Warehouse-New-Overlay
+                         - Warehouse-New-BGP
+                     scope member:
+                           name: "{{deviceName}}"
+                           vdom: root	
