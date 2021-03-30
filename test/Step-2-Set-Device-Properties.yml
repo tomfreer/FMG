@@ -12,8 +12,8 @@
         fmgr_generic:
             method: exec
             params: 
-			    - url: dvmdb/adom/SD-WAN_Lab/device/"{{deviceName}}"            
-				  data:
+                - url: dvmdb/adom/SD-WAN_Lab/device/"{{deviceName}}"            
+                  data:
                     name: "{{deviceName}}"
                     latitiude: "{{latitiude}}"
                     longitude: "{{longitude}}"
