@@ -1,0 +1,52 @@
+---
+- hosts: 192.168.0.104
+  collections:
+    - fortinet.fortimanager
+  connection: httpapi
+  vars:
+     ansible_httpapi_use_ssl: True
+     ansible_httpapi_validate_certs: False
+     ansible_httpapi_port: 443
+  tasks:
+   - name: Script table.
+     fmgr_dvmdb_script:
+        adom: SD-WAN-Lab
+        state: present
+        dvmdb_script:
+           content: >
+             config system interface
+               edit internal
+                 set ip $(LAN-IP) 255.255.255.0
+                 set mode static
+                 set type hard-switch
+                 set allowaccess ping https ssh fgfm fabric
+                 set vdom root
+               next
+             end
+           desc: Add LAN Interface
+           name: LAN Interface
+           target: device_database
+           type: cli
+   - name: Run script.
+     fmgr_dvmdb_script_execute:
+        adom: SD-WAN-Lab
+        dvmdb_script_execute:
+           adom: SD-WAN-Lab
+           scope:
+             -
+                 name: "{{deviceName}}"
+                 vdom: root
+           script: LAN Interface
+    -    name: Assign Template
+         fmgr_generic:
+             method: update
+             params:
+                 - url: pm/config/adom/SD-WAN-Lab/obj/cli/template-group
+                   data:
+                        name: Warehouse-New
+                        member:
+                            - Warehouse-New-Overlay
+                            - Warehouse-New-BGP
+                        scope member:
+                              name: "{{deviceName}}"
+                              vdom: root
