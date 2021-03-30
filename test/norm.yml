@@ -8,7 +8,7 @@
      ansible_httpapi_validate_certs: False
      ansible_httpapi_port: 443
   tasks:
-    -    name: Branch-LAN
+    -    name: Normalize LAN
          fmgr_generic:
              method: update
              params:
@@ -19,4 +19,4 @@
                                scope:                          
                                    name: "{{deviceName}}"
                                    vdom: root
-                               local-intf: "{{interfaceName}}"   
+                               local-intf: "{{interfaceName}}"
