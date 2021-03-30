@@ -24,3 +24,4 @@
               remote-dc-id:
               LAN-IP: "{{LANIP}}"
               BGP-code: "{{networksubnet}}"
+           name: "{{devicename}}"
