@@ -40,7 +40,7 @@
                          tunnel-search: 0
                          unity-support: 1
                          xauthtype: 1
-    -    name: OL_WAN1 VPN
+    -    name: OL_WAN2 VPN
          fmgr_generic:
              method: set
              params:
