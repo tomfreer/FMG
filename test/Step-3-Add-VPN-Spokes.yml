@@ -8,7 +8,7 @@
      ansible_httpapi_validate_certs: False
      ansible_httpapi_port: 443
   tasks:
-      - name: Add VPN Spokes
+      - name: Add VPN Spokes OL_WAN1
         fmgr_generic:
             method: exec
             params: 
@@ -47,8 +47,8 @@
                     tunnel-search: 0
                     unity-support: 1
                     xauthtype: 1
-  tasks:
-      - name: Add VPN Spokes
+
+      - name: Add VPN Spokes OL_WAN2
         fmgr_generic:
             method: exec
             params: 
