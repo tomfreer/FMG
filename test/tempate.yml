@@ -8,7 +8,7 @@
      ansible_httpapi_validate_certs: False
      ansible_httpapi_port: 443
   tasks:
-    -    name: OL_WAN1 VPN
+    -    name: Assign Template
          fmgr_generic:
              method: update
              params:
