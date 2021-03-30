@@ -8,18 +8,16 @@
      ansible_httpapi_validate_certs: False
      ansible_httpapi_port: 443
   tasks:
-      - name: Set Device Properties
-        fmgr_generic:
-            method: exec
-            params: 
-                - url: dvmdb/adom/SD-WAN_Lab/device/"{{deviceName}}"            
-                  data:
-                    name: "{{deviceName}}"
-                    latitiude: "{{latitiude}}"
-                    longitude: "{{longitude}}"
-                    meta fields:
-                        Address: "{{CityCountry}}"
-                        branch-id: "{{branchID}}"
-                        dc-id: ""
-                        remote-dc-id: "" 
-                        BGP-code: "{{BGPCode}}"
+   - name: Set Details
+     fmgr_dvmdb_device:
+        bypass_validation: False
+        adom: SD-WAN-Lab
+        device: "{{deviceName}}"
+        dvmdb_device:
+           hostname: "{{deviceName}}"
+           latitude: "{{latitude}}"'
+           longitude: "{{longitude}}"
+           meta fields: 
+              address: "{{cityCountry}}"
+              branch-id: "{{branchID}}"
+              BGP-code: "{{BGPCode}}"
