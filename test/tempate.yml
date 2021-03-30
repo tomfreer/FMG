@@ -1,0 +1,23 @@
+---
+- hosts: 192.168.0.104
+  collections:
+    - fortinet.fortimanager
+  connection: httpapi
+  vars:
+     ansible_httpapi_use_ssl: True
+     ansible_httpapi_validate_certs: False
+     ansible_httpapi_port: 443
+  tasks:
+    -    name: OL_WAN1 VPN
+         fmgr_generic:
+             method: update
+             params:
+                 - url: pm/config/adom/SD-WAN-Lab/obj/vpnmgr/node
+                   data:
+                        name: Warehouse-New
+                        member:
+                            - Warehouse-New-Overlay
+                            - Warehouse-New-BGP
+                        - scope member:
+                              name: "{{deviceName}}"
+                              vdom: root
