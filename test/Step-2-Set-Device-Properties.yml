@@ -19,7 +19,7 @@
                     longitude: "{{longitude}}"
                     meta fields:
                         Address: "{{CityCountry}}"
-                        branch-id: "{{branch-id}}"
+                        branch-id: "{{branchID}}"
                         dc-id: ""
                         remote-dc-id: "" 
-                        BGP-code: "{{BGP-Code}}"
+                        BGP-code: "{{BGPCode}}"
