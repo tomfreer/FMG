@@ -1,4 +1,3 @@
-
 ---
 - hosts: 192.168.0.104
   collections:
@@ -36,19 +35,19 @@
                     groups:
                         name: Warehouse-Group
                         adom: SD-WAN-Lab
-       - name: Set Details
-         fmgr_dvmdb_device:
-            bypass_validation: False
-            adom: SD-WAN-Lab
-            device: "{{deviceName}}"
-            dvmdb_device:
-               hostname: "{{deviceName}}"
-               latitude: "{{latitude}}"
-               longitude: "{{longitude}}"
-               meta fields: 
-                  address: "{{citycountry}}"
-                  branch-id: "{{branchid}}"
-                  remote-dc-id:
-                  LAN-IP: "{{LANIP}}"
-                  BGP-code: "{{networksubnet}}"
-               name: "{{deviceName}}"
+      - name: Set Details
+        fmgr_dvmdb_device:
+           bypass_validation: False
+           adom: SD-WAN-Lab
+           device: "{{deviceName}}"
+           dvmdb_device:
+              hostname: "{{deviceName}}"
+              latitude: "{{latitude}}"
+              longitude: "{{longitude}}"
+              meta fields: 
+                 address: "{{citycountry}}"
+                 branch-id: "{{branchid}}"
+                 remote-dc-id:
+                 LAN-IP: "{{LANIP}}"
+                 BGP-code: "{{networksubnet}}"
+              name: "{{deviceName}}"
