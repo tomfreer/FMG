@@ -18,6 +18,6 @@
                         member:
                             - Warehouse-New-Overlay
                             - Warehouse-New-BGP
-                        - scope member:
+                        scope member:
                               name: "{{deviceName}}"
                               vdom: root
