@@ -1,0 +1,49 @@
+---
+- hosts: 192.168.0.104
+  collections:
+    - fortinet.fortimanager
+  connection: httpapi
+  vars:
+     ansible_httpapi_use_ssl: True
+     ansible_httpapi_validate_certs: False
+     ansible_httpapi_port: 443
+  tasks:
+           - name: Add VPN Spokes OL_WAN2
+        fmgr_generic:
+            method: exec
+            params: 
+                - url: pm/config/adom/SD-WAN-Lab/obj/vpnmgr/node
+                  data:
+                    protected_subnet:
+                        addr: all
+                        seq: 1
+                        
+                    scope member:
+                        name: "{{deviceName}}"
+                        vdom: root
+                        
+                    id: 10
+                    vpntable: OL_WAN2
+                    role: 1
+                    usergrp: []
+                    iface: "{{interfaceName2}}"
+                    automatic_routing: 0
+                    extgwip: []
+                    extgw_p2_per_net: 0
+                    route-overlap: 0
+                    vpn-zone: []
+                    spoke-zone: []					
+                    vpn-interface-priority: []
+                    auto-configuration: 1
+                    ipsec-lease-hold: 60
+                    add-route: 0
+                    assign-ip: 1
+                    assign-ip-from: 0
+                    exchange-interface-ip: 0
+                    mode-cfg: 1
+                    mode-cfg-ip-version: 0
+                    net-device: 1
+                    peergrp: []
+                    tunnel-search: 0
+                    unity-support: 1
+                    xauthtype: 1
