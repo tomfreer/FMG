@@ -1,0 +1,25 @@
+---
+- hosts: 192.168.0.104
+  collections:
+    - fortinet.fortimanager
+  connection: httpapi
+  vars:
+     ansible_httpapi_use_ssl: True
+     ansible_httpapi_validate_certs: False
+     ansible_httpapi_port: 443
+  tasks:
+      - name: Set Device Properties
+        fmgr_generic:
+            method: exec
+            params: 
+			    - url: dvmdb/adom/SD-WAN_Lab/device/"{{deviceName}}"            
+				  data:
+                    name: "{{deviceName}}"
+                    latitiude: "{{latitiude}}"
+                    longitude: "{{longitude}}"
+                    meta fields:
+                        Address: "{{CityCountry}}"
+                        branch-id: "{{branch-id}}"
+                        dc-id: ""
+                        remote-dc-id: "" 
+                        BGP-code: "{{BGP-Code}}"
