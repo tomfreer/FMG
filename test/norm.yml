@@ -12,11 +12,11 @@
          fmgr_generic:
              method: update
              params:
-                 - url: pm/config/adom/{{adom}}/obj/dynamic/interface/
+                 - url: pm/config/adom/SD-WAN-Lab/obj/dynamic/interface/
                    data:
                           name: Branch-LAN
                           dynamic_mapping:
                                scope:                          
                                    name: "{{deviceName}}"
                                    vdom: root
-                               local-intf: "{{interfaceName}}"
+                               local-intf: "{{interfaceName}}"    
