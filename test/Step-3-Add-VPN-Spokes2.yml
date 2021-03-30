@@ -31,12 +31,12 @@
                  addr: all
                  seq: '1'
            role: spoke
-           route-overlap: use-old
+           route-overlap: use-new
            tunnel-search: selectors
            unity-support: enable
            vpn-interface-priority: '0'
            vpntable: OL_WAN1
-           xauthtype: client
+           xauthtype: disable
            scope member:
              -
                  name: "{{deviceName}}"
