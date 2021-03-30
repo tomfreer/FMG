@@ -25,15 +25,10 @@
                     id: 9
                     vpntable: OL_WAN1
                     role: 1
-                    usrgrp: []
                     iface: "{{interfaceName1}}"
                     automatic_routing: 0
-                    extgwip: []
                     extgw_p2_per_net: 0
-                    route-overlap: 0
-                    vpn-zone: []
-                    spoke-zone: []					
-                    vpn-interface-priority: []
+                    route-overlap: 0					
                     auto-configuration: 1
                     ipsec-lease-hold: 60
                     add-route: 0
@@ -43,7 +38,6 @@
                     mode-cfg: 1
                     mode-cfg-ip-version: 0
                     net-device: 1
-                    peergrp: []
                     tunnel-search: 0
                     unity-support: 1
                     xauthtype: 1
