@@ -10,7 +10,7 @@
   tasks:
       - name: Add VPN Spokes OL_WAN1
         fmgr_generic:
-            method: exec
+            method: set
             params: 
                 - url: pm/config/adom/SD-WAN-Lab/obj/vpnmgr/node
                   data:
