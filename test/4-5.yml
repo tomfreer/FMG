@@ -40,7 +40,7 @@
    - name: Assign Template
      fmgr_generic:
      method: update
-         params:
+     params:
              - url: pm/config/adom/SD-WAN-Lab/obj/cli/template-group
                data:
                      name: Warehouse-New
