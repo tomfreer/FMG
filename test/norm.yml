@@ -1,0 +1,22 @@
+---
+- hosts: 192.168.0.104
+  collections:
+    - fortinet.fortimanager
+  connection: httpapi
+  vars:
+     ansible_httpapi_use_ssl: True
+     ansible_httpapi_validate_certs: False
+     ansible_httpapi_port: 443
+  tasks:
+    -    name: Branch-LAN
+         fmgr_generic:
+             method: update
+             params:
+                 - url: pm/config/adom/{{adom}}/obj/dynamic/interface/
+                   data:
+                          name: Branch-LAN
+                          dynamic_mapping:
+                               scope:                          
+                                   name: "{{deviceName}}"
+                                   vdom: root
+                               local-intf: "{{interfaceName}}"   
