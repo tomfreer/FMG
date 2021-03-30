@@ -48,7 +48,7 @@
                     unity-support: 1
                     xauthtype: 1
   
-  tasks:
+
       - name: Add VPN Spokes OL_WAN2
         fmgr_generic:
             method: exec
