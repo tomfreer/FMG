@@ -25,7 +25,7 @@
                     id: 10
                     vpntable: OL_WAN2
                     role: 1
-                    usergrp: []
+                    usrgrp: []
                     iface: "{{interfaceName2}}"
                     automatic_routing: 0
                     extgwip: []
