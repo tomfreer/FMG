@@ -36,7 +36,7 @@
                     groups:
                         name: Warehouse-Group
                         adom: SD-WAN-Lab
-	   - name: Set Details
+       - name: Set Details
          fmgr_dvmdb_device:
             bypass_validation: False
             adom: SD-WAN-Lab
