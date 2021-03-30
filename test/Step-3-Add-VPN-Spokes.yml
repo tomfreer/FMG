@@ -33,13 +33,13 @@
                     route-overlap: 0
                     vpn-zone: []
                     spoke-zone: []					
-		    vpn-interface-priority: []
+                    vpn-interface-priority: []
                     auto-configuration: 1
                     ipsec-lease-hold: 60
                     add-route: 0
                     assign-ip: 1
                     assign-ip-from: 0
-		    exchange-interface-ip: 0
+                    exchange-interface-ip: 0
                     mode-cfg: 1
                     mode-cfg-ip-version: 0
                     net-device: 1
@@ -47,7 +47,6 @@
                     tunnel-search: 0
                     unity-support: 1
                     xauthtype: 1
-					
                     protected_subnet:
                         addr: all
                         seq: 1
@@ -67,7 +66,7 @@
                     route-overlap: 0
                     vpn-zone: []
                     spoke-zone: []					
-		    vpn-interface-priority: []
+                    vpn-interface-priority: []
                     auto-configuration: 1
                     ipsec-lease-hold: 60
                     add-route: 0
@@ -80,5 +79,4 @@
                     peergrp: []
                     tunnel-search: 0
                     unity-support: 1
-                    xauthtype: 1					
-			
+                    xauthtype: 1
