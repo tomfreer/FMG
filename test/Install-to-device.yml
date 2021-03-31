@@ -17,5 +17,5 @@
                 pkg: "{{packageName}}"
                 scope:
                   -
-                    name: "{{groupName}}"
+                    name: "{{deviceName}}"
                     vdom: root  
