@@ -1,0 +1,117 @@
+---
+- hosts: 192.168.0.104
+  collections:
+    - fortinet.fortimanager
+  connection: httpapi
+  vars:
+     ansible_httpapi_use_ssl: True
+     ansible_httpapi_validate_certs: False
+     ansible_httpapi_port: 443
+  tasks:
+      - name: Add Device
+        fmgr_generic:
+            method: exec
+            params: 
+                - url: dvm/cmd/add/device
+                  data:
+                    adom: SD-WAN-Lab
+                    flags:
+                        - create_task
+                        - nonblocking
+                    device:
+                        name: "{{deviceName}}"
+                        adm_usr: fgtadmin
+                        os_ver: 6
+                        version: 600
+                        os_type: 0
+                        mr: 4
+                        platform_str: "{{deviceModel}}"
+                        mgmt_mode: 3
+                        flags: 67371040
+                        prefer_img_ver: null
+                        sn: "{{deviceSN}}"
+                        faz.perm: 15
+                        faz.quota: 0
+                    groups:
+                        name: Warehouse-Group
+                        adom: SD-WAN-Lab
+      - name: Set Details
+        fmgr_dvmdb_device:
+           bypass_validation: False
+           adom: SD-WAN-Lab
+           device: "{{deviceName}}"
+           dvmdb_device:
+              hostname: "{{deviceName}}"
+              latitude: "{{latitude}}"
+              longitude: "{{longitude}}"
+              meta fields: 
+                 address: "{{citycountry}}"
+                 branch-id: "{{branchid}}"
+                 remote-dc-id:
+                 LAN-IP: "{{LANIP}}"
+                 BGP-code: "{{networksubnet}}"
+              name: "{{deviceName}}"
+      - name: OL_WAN1 VPN
+        fmgr_generic:
+             method: set
+             params:
+                 - url: pm/config/adom/SD-WAN-Lab/obj/vpnmgr/node
+                   data:
+                       - protected_subnet:
+                            addr: all
+                            seq: 1
+                       - scope member:
+                            name: "{{deviceName}}"
+                            vdom: root
+                         id: 9
+                         vpntable: OL_WAN1
+                         role: 1
+                         iface: "{{interfaceName1}}"
+                         automatic_routing: 0
+                         route-overlap: 0
+                         vpn-interface-priority: 0
+                         auto-configuration: 1
+                         ipsec-lease-hold: 60
+                         add-route: 0
+                         assign-ip: 1
+                         assign-ip-from: 0
+                         exchange-interface-ip: 0
+                         mode-cfg: 1
+                         mode-cfg-ip-version: 0
+                         net-device: 1
+                         peertype: 8
+                         tunnel-search: 0
+                         unity-support: 1
+                         xauthtype: 1
+      - name: OL_WAN2 VPN
+        fmgr_generic:
+             method: set
+             params:
+                 - url: pm/config/adom/SD-WAN-Lab/obj/vpnmgr/node
+                   data:
+                       - protected_subnet:
+                            addr: all
+                            seq: 1
+                       - scope member:
+                            name: "{{deviceName}}"
+                            vdom: root
+                         id: 10
+                         vpntable: OL_WAN2
+                         role: 1
+                         iface: "{{interfaceName2}}"
+                         automatic_routing: 0
+                         route-overlap: 0
+                         vpn-interface-priority: 0
+                         auto-configuration: 1
+                         ipsec-lease-hold: 60
+                         add-route: 0
+                         assign-ip: 1
+                         assign-ip-from: 0
+                         exchange-interface-ip: 0
+                         mode-cfg: 1
+                         mode-cfg-ip-version: 0
+                         net-device: 1
+                         peertype: 8
+                         tunnel-search: 0
+                         unity-support: 1
+                         xauthtype: 1
