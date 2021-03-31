@@ -9,13 +9,13 @@
      ansible_httpapi_port: 443
   tasks:
       - name: Copy and install a policy package to devices.
-             fmgr_securityconsole_install_package:
-                 securityconsole_install_package:
-                    adom: SD-WAN-Lab
-                    flags:
-                      - none
-                    pkg: "{{packageName}}"
-                    scope:
-                      -
-                        name: "{{groupName}}"
-                        vdom: root  
+        fmgr_securityconsole_install_package:
+             securityconsole_install_package:
+                adom: SD-WAN-Lab
+                flags:
+                  - none
+                pkg: "{{packageName}}"
+                scope:
+                  -
+                    name: "{{groupName}}"
+                    vdom: root  
