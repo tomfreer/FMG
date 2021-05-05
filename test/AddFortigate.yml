@@ -63,7 +63,7 @@
                        - scope member:
                             name: "{{deviceName}}"
                             vdom: root
-                         id: 8
+                         id: 7
                          vpntable: OL_WAN1
                          role: 1
                          iface: "{{interfaceName1}}"
