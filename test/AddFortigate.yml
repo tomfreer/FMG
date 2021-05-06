@@ -63,7 +63,6 @@
                        - scope member:
                             name: "{{deviceName}}"
                             vdom: root
-                         id: 9
                          vpntable: OL_WAN1
                          role: 1
                          iface: "{{interfaceName1}}"
@@ -95,7 +94,6 @@
                        - scope member:
                             name: "{{deviceName}}"
                             vdom: root
-                         id: 10
                          vpntable: OL_WAN2
                          role: 1
                          iface: "{{interfaceName2}}"
