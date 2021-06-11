@@ -14,7 +14,7 @@
             params: 
                 - url: dvm/cmd/add/device
                   data:
-                    adom: SD-WAN-Lab
+                    adom: sd-wan-lab-fos70
                     flags:
                         - create_task
                         - nonblocking
@@ -34,11 +34,11 @@
                         faz.quota: 0
                     groups:
                         name: Warehouse-Group
-                        adom: SD-WAN-Lab
+                        adom: sd-wan-lab-fos70
       - name: Set Details
         fmgr_dvmdb_device:
            bypass_validation: False
-           adom: SD-WAN-Lab
+           adom: sd-wan-lab-fos70
            device: "{{deviceName}}"
            dvmdb_device:
               hostname: "{{deviceName}}"
@@ -117,7 +117,7 @@
                          xauthtype: 1
       - name: Script table.
         fmgr_dvmdb_script:
-            adom: SD-WAN-Lab
+            adom: sd-wan-lab-fos70
             state: present
             dvmdb_script:
                content: >
@@ -136,9 +136,9 @@
                type: cli
       - name: Run script.
         fmgr_dvmdb_script_execute:
-            adom: SD-WAN-Lab
+            adom: sd-wan-lab-fos70
             dvmdb_script_execute:
-               adom: SD-WAN-Lab
+               adom: sd-wan-lab-fos70
                scope:
                 -
                    name: "{{deviceName}}"
@@ -159,7 +159,7 @@
                             vdom: root
       - name: Interface Branch-LAN
         fmgr_dynamic_interface_dynamicmapping:
-            adom: SD-WAN-Lab
+            adom: sd-wan-lab-fos70
             state: present
             interface: Branch-LAN
             dynamic_interface_dynamicmapping:
@@ -170,7 +170,7 @@
                local-intf: "{{intName1}}"
       - name: Interface WAN1-ISP
         fmgr_dynamic_interface_dynamicmapping:
-            adom: SD-WAN-Lab
+            adom: sd-wan-lab-fos70
             state: present
             interface: WAN1-ISP
             dynamic_interface_dynamicmapping:
@@ -182,7 +182,7 @@
       - name: Copy and install a policy package to devices.
         fmgr_securityconsole_install_package:
             securityconsole_install_package:
-               adom: SD-WAN-Lab
+               adom: sd-wan-lab-fos70
                flags:
                  - none
                pkg: "{{packageName}}"
