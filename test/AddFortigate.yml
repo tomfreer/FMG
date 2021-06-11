@@ -55,7 +55,7 @@
         fmgr_generic:
              method: set
              params:
-                 - url: pm/config/adom/SD-WAN-Lab/obj/vpnmgr/node
+                 - url: pm/config/adom/sd-wan-lab-fos70/obj/vpnmgr/node
                    data:
                        - protected_subnet:
                             addr: all
@@ -87,7 +87,7 @@
         fmgr_generic:
              method: set
              params:
-                 - url: pm/config/adom/SD-WAN-Lab/obj/vpnmgr/node
+                 - url: pm/config/adom/sd-wan-lab-fos70/obj/vpnmgr/node
                    data:
                        - protected_subnet:
                             addr: all
@@ -148,7 +148,7 @@
         fmgr_generic:
              method: update
              params:
-                 - url: pm/config/adom/SD-WAN-Lab/obj/cli/template-group
+                 - url: pm/config/adom/sd-wan-lab-fos70/obj/cli/template-group
                    data:
                         name: Warehouse-New
                         member:
