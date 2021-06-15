@@ -21,7 +21,7 @@
                     device:
                         name: "{{deviceName}}"
                         adm_usr: fgtadmin
-                        os_ver: unknown
+                        os_ver: 6
                         version: 600
                         os_type: 0
                         mr: 4
