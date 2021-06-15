@@ -47,7 +47,7 @@
               meta fields: 
                  address: "{{citycountry}}"
                  branch-id: "{{branchid}}"
-                 remote-dc-id:
+                 remote-dc-id: 0
                  LAN-IP: "{{LANIP}}"
                  BGP-code: "{{networksubnet}}"
               name: "{{deviceName}}"
