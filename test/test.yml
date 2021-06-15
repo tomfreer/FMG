@@ -1,0 +1,193 @@
+---
+- hosts: 192.168.0.104
+  collections:
+    - fortinet.fortimanager
+  connection: httpapi
+  vars:
+     ansible_httpapi_use_ssl: True
+     ansible_httpapi_validate_certs: False
+     ansible_httpapi_port: 443
+  tasks:
+      - name: Add Device
+        fmgr_generic:
+            method: exec
+            params: 
+                - url: dvm/cmd/add/device
+                  data:
+                    adom: sd-wan-lab-fos70
+                    flags:
+                        - create_task
+                        - nonblocking
+                    device:
+                        name: "{{deviceName}}"
+                        adm_usr: fgtadmin
+                        os_ver: 7
+                        version: 700
+                        os_type: 0
+                        mr: 0
+                        platform_str: "{{deviceModel}}"
+                        mgmt_mode: 3
+                        flags: 67371040
+                        prefer_img_ver: null
+                        sn: "{{deviceSN}}"
+                        faz.perm: 15
+                        faz.quota: 0
+                    groups:
+                        name: Warehouse-Group
+                        adom: sd-wan-lab-fos70
+      - name: Set Details
+        fmgr_dvmdb_device:
+           bypass_validation: False
+           adom: sd-wan-lab-fos70
+           device: "{{deviceName}}"
+           dvmdb_device:
+              hostname: "{{deviceName}}"
+              latitude: "{{latitude}}"
+              longitude: "{{longitude}}"
+              meta fields: 
+                 address: "{{citycountry}}"
+                 branch-id: "{{branchid}}"
+                 remote-dc-id:
+                 dc-id: "0"
+                 LAN-IP: "{{LANIP}}"
+                 BGP-code: "{{networksubnet}}"
+              name: "{{deviceName}}"
+      - name: OL_WAN1 VPN
+        fmgr_generic:
+             method: set
+             params:
+                 - url: pm/config/adom/sd-wan-lab-fos70/obj/vpnmgr/node
+                   data:
+                       - protected_subnet:
+                            addr: all
+                            seq: 1
+                       - scope member:
+                            name: "{{deviceName}}"
+                            vdom: root
+                         id: 7
+                         vpntable: OL_WAN1
+                         role: 1
+                         iface: "{{interfaceName1}}"
+                         automatic_routing: 0
+                         route-overlap: 0
+                         vpn-interface-priority: 0
+                         auto-configuration: 1
+                         ipsec-lease-hold: 60
+                         add-route: 0
+                         assign-ip: 1
+                         assign-ip-from: 0
+                         exchange-interface-ip: 0
+                         mode-cfg: 1
+                         mode-cfg-ip-version: 0
+                         net-device: 1
+                         peertype: 8
+                         tunnel-search: 0
+                         unity-support: 1
+                         xauthtype: 1
+      - name: OL_WAN2 VPN
+        fmgr_generic:
+             method: set
+             params:
+                 - url: pm/config/adom/sd-wan-lab-fos70/obj/vpnmgr/node
+                   data:
+                       - protected_subnet:
+                            addr: all
+                            seq: 1
+                       - scope member:
+                            name: "{{deviceName}}"
+                            vdom: root
+                         id: 8
+                         vpntable: OL_WAN2
+                         role: 1
+                         iface: "{{interfaceName2}}"
+                         automatic_routing: 0
+                         route-overlap: 0
+                         vpn-interface-priority: 0
+                         auto-configuration: 1
+                         ipsec-lease-hold: 60
+                         add-route: 0
+                         assign-ip: 1
+                         assign-ip-from: 0
+                         exchange-interface-ip: 0
+                         mode-cfg: 1
+                         mode-cfg-ip-version: 0
+                         net-device: 1
+                         peertype: 8
+                         tunnel-search: 0
+                         unity-support: 1
+                         xauthtype: 1
+      - name: Script table.
+        fmgr_dvmdb_script:
+            adom: sd-wan-lab-fos70
+            state: present
+            dvmdb_script:
+               content: >
+                config system interface
+                 edit internal
+                  set ip $(LAN-IP) 255.255.255.0
+                  set mode static
+                  set type hard-switch
+                  set allowaccess ping https ssh fgfm fabric
+                  set vdom root
+                 next
+                end
+               desc: Add LAN Interface
+               name: LAN Interface
+               target: device_database
+               type: cli
+      - name: Run script.
+        fmgr_dvmdb_script_execute:
+            adom: sd-wan-lab-fos70
+            dvmdb_script_execute:
+               adom: sd-wan-lab-fos70
+               scope:
+                -
+                   name: "{{deviceName}}"
+                   vdom: root
+               script: LAN Interface
+      - name: Assign Template
+        fmgr_generic:
+             method: update
+             params:
+                 - url: pm/config/adom/sd-wan-lab-fos70/obj/cli/template-group
+                   data:
+                        name: Warehouse-New
+                        member:
+                          - Warehouse-New-Overlay
+                          - Warehouse-New-BGP
+                        scope member:
+                            name: "{{deviceName}}"
+                            vdom: root
+      - name: Interface Branch-LAN
+        fmgr_dynamic_interface_dynamicmapping:
+            adom: sd-wan-lab-fos70
+            state: present
+            interface: Branch-LAN
+            dynamic_interface_dynamicmapping:
+               _scope:
+                 -
+                    name: "{{deviceName}}"
+                    vdom: root
+               local-intf: "{{intName1}}"
+      - name: Interface WAN1-ISP
+        fmgr_dynamic_interface_dynamicmapping:
+            adom: sd-wan-lab-fos70
+            state: present
+            interface: WAN1-ISP
+            dynamic_interface_dynamicmapping:
+               _scope:
+                 -
+                   name: "{{deviceName}}"
+                   vdom: root
+               local-intf: "{{intName2}}"
+      - name: Copy and install a policy package to devices.
+        fmgr_securityconsole_install_package:
+            securityconsole_install_package:
+               adom: sd-wan-lab-fos70
+               flags:
+                 - none
+               pkg: "{{packageName}}"
+               scope:
+                 -
+                   name: "{{deviceName}}"
+                   vdom: root      
