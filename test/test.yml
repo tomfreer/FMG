@@ -116,25 +116,13 @@
                          tunnel-search: 0
                          unity-support: 1
                          xauthtype: 1
-      - name: Script table.
-        fmgr_dvmdb_script:
-            adom: sd-wan-lab-fos70
-            state: present
-            dvmdb_script:
-               content: >
-                config system interface
-                 edit internal
-                  set ip $(LAN-IP) 255.255.255.0
-                  set mode static
-                  set type hard-switch
-                  set allowaccess ping https ssh fgfm fabric
-                  set vdom root
-                 next
-                end
-               desc: Add LAN Interface
-               name: LAN Interface
-               target: device_database
-               type: cli
+      - name: Assign Template LAN
+        fmgr_generic:
+             method: set
+             params:
+                 - url: "pm/devprof/adom/sd-wan-lab-fos70/test/scope member"
+                   data:
+                        name: "{{deviceName}}"
       - name: Run script.
         fmgr_dvmdb_script_execute:
             adom: sd-wan-lab-fos70
