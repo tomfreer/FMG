@@ -168,6 +168,9 @@
                    name: "{{deviceName}}"
                    vdom: root
                local-intf: "{{intName2}}"
+      - name: Pause for new HW
+        pause:
+          minutes: 10
       - name: Copy and install a policy package to devices.
         fmgr_securityconsole_install_package:
             securityconsole_install_package:
